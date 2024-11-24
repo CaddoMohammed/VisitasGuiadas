@@ -16,5 +16,4 @@ var ubicaciones = [
     {a:[14.0852778,-87.16972222222223],b:"Registro y VOAE"},
     {a:[14.0836111,-87.1625],b:"Oficinas VOAE"},
     {a:[14.0836111,-87.1625],b:"Edificio C3"},
-
 ];
