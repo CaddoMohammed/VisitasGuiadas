@@ -18,6 +18,6 @@ var ubicaciones = [
     {a:[14.08364, -87.16594],b:"Edificio G1"},
     {a:[14.08667, -87.16204],b:"Edificio B2"},
     {a:[14.0861, -87.16178],b:"Edificio B1"},
-    {a:[14.08469, -87.16877],b:"Estadio Olimpico"},
+    {a:[14.08469, -87.16877],b:"Complejo Deportivo Universitario"},
     {a:[14.08509, -87.16495],b:"Edificio 1847"},
 ];
