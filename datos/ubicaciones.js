@@ -16,6 +16,7 @@ var ubicaciones = [
     {a:[14.08611, -87.16665],b:"Edificio J1"},
     {a:[14.0877, -87.15948],b:"Edificio K1"},
     {a:[14.08782, -87.15993],b:"Edificio K2"},
+    {a:[14.08509, -87.16495],b:"Edificio 1847"},
 
 /*
     {a:[14.08491, -87.16325],b:"Padre Trino"},
@@ -30,6 +31,5 @@ var ubicaciones = [
     {a:[14.08376, -87.16273],b:"VOAE"},
     {a:[14.0836111,-87.1625],b:"Oficinas VOAE"},
     {a:[14.08469, -87.16877],b:"Complejo Deportivo Universitario"},
-    {a:[14.08509, -87.16495],b:"Edificio 1847"},
     */
 ];
