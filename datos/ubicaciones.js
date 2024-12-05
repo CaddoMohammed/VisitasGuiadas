@@ -21,6 +21,8 @@ var ubicaciones = [
     {a:[14.08491, -87.16325],b:"Padre Trino"},
     {a:[14.0841667,-87.165],b:"CISE"},
     {a:[14.08469, -87.16877],b:"Complejo Deportivo Universitario"},
+    {a:[14.08376, -87.16273],b:"VOAE"},
+    {a:[14.0836111,-87.1625],b:"Oficinas VOAE"},
 
 
 /*
