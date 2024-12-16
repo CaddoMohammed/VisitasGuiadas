@@ -9,7 +9,7 @@ var ubicaciones = [[
 				mostrarMensaje:true,
 				mensajes:[
 					{
-						texto:"Mensaje 1",
+						texto:"Prueba",
 						tamaño:6,
 						posicion:"-1.50 1.25 -5",
 						rotacion:"50 0 0"
