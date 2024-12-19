@@ -4,15 +4,15 @@ var centros = [
 var ubicaciones = [[
 		{
 			a:[14.08501, -87.16222],
-			b:"Edificio A1",
+			b:"FACES 360",
 			c:{
 				mostrarMensaje:true,
 				mensajes:[
 					{
-						texto:"Prueba",
-						tamaño:6,
-						posicion:"-1.50 1.25 -5",
-						rotacion:"50 0 0"
+						texto:"Edificio A1: Facultad de Ciencias Sociales",
+						tamaño:15,
+						posicion:"6 1.25 -10",
+						rotacion:"0 10 0"
 					},
 					{
 						texto:"Mensaje 2",
