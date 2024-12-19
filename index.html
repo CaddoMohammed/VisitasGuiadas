@@ -13,20 +13,23 @@
 		<script defer type="text/javascript" src="datos/ubicaciones.js"></script>
 		<script defer src="scripts/a1.js"></script>
 	</head>
-	<body data-bs-theme="dark" style="width:100vw; min-height:100dvh;" class="d-flex flex-column">
-		<header class="navbar navbar-dark bg-dark p-3">
+	<body data-bs-theme="light" style="width:100vw; min-height:100dvh;" class="d-flex flex-column">
+		<header class="navbar p-0" data-bs-theme="ligth">
 			<ul class="nav nav-underline">
 				<li class="nav-item">
-					<a class="nav-link active" aria-current="page" href="/">Inicio</a>
+					<a class="nav-link p-1" aria-current="page" href="/">
+						<img src="img/logo-unah.png" width="100rem">
+					</a>
 				</li>
-				<li class="nav-item">
-					<a class="nav-link" href="Escaneo.html">Escanear</a>
+				<li>
+					<a class="nav-link" href="https://iicat.unah.edu.hn/">
+						<img src="img/IICAT.png" width="120rem">
+					</a>
 				</li>
 			</ul>
 		</header>
 		<main class="flex-grow-1" style="height:0;">
 			<section id="mapa" style="width:100%; height:100%;"></section>
-			<aside></aside>
 		</main>
 		<div>
 			<button id="m1" type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#m2" style="display:none;">
