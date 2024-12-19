@@ -4,7 +4,7 @@ var centros = [
 var ubicaciones = [[
 		{
 			a:[14.08501, -87.16222],
-			b:"FACES 360",
+			b:"Edificio A1",
 			c:{
 				mostrarMensaje:true,
 				mensajes:[
