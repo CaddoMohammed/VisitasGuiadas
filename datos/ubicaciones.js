@@ -19,25 +19,8 @@ var ubicaciones = [[
 						tamaño:6,
 						posicion:"6 1.25 -5",
 						rotacion:"0 20 0"
-					},
-					{
-						texto:"Mensaje 3",
-						tamaño:6,
-						posicion:"1 1.25 -7",
-						rotacion:"0 0 50"
-					},
-					{
-						texto:"Mensaje 4",
-						tamaño:6,
-						posicion:"3 1.25 -5",
-						rotacion:"0 0 0"
-					},
-					{
-						texto:"Mensaje 5",
-						tamaño:6,
-						posicion:"6 1.25 -4",
-						rotacion:"0 0 0"
 					}
+
 				]
 			}
 		},
