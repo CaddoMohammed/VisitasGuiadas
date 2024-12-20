@@ -20,16 +20,65 @@ for(let i=0;i<ubicaciones[X].length;i++){
 			let b = "";
 			if(ubicaciones[X][i].c.mostrarMensaje===true){
 				for(let j=0;j<ubicaciones[X][i].c.mensajes.length;j++){
-					b = `
-					<a-text font="kelsonsans" value="${ubicaciones[X][i].c.mensajes[j].texto}" width="${ubicaciones[X][i].c.mensajes[j].tamaño}" position="${ubicaciones[X][i].c.mensajes[j].posicion}" rotation="${ubicaciones[X][i].c.mensajes[j].rotacion}"></a-text>` + b;
+					let c;
+					switch(ubicaciones[X][i].c.mensajes[j].tipo){
+						case 1:
+							c = `
+								<a-text font="${ubicaciones[X][i].c.mensajes[j].fuente}" value="${ubicaciones[X][i].c.mensajes[j].texto}" width="${ubicaciones[X][i].c.mensajes[j].tamaño}" position="${ubicaciones[X][i].c.mensajes[j].posicion}" rotation="${ubicaciones[X][i].c.mensajes[j].rotacion}" color="${ubicaciones[X][i].c.mensajes[j].color}"></a-text>`;
+							break;
+						case 2:
+							c = `
+								<a-entity position="${ubicaciones[X][i].c.mensajes[j].posicion}" geometry="primitive:plane; width:${ubicaciones[X][i].c.mensajes[j].tamaño}" material="color:${ubicaciones[X][i].c.mensajes[j].caja.color}" text="color:${ubicaciones[X][i].c.mensajes[j].caja.color_texto}; align:${ubicaciones[X][i].c.mensajes[j].caja.alineacion}; font:${ubicaciones[X][i].c.mensajes[j].fuente}; value:${ubicaciones[X][i].c.mensajes[j].texto}" rotation="${ubicaciones[X][i].c.mensajes[j].rotacion}"></a-entity>`;
+							break;
+						case 3:
+							c = 
+								`<a-assets>
+									<a-asset-item id="modelo${j}" src="${ubicaciones[X][i].c.mensajes[j].src}"></a-asset-item>
+								</a-assets>
+								<a-gltf-model src="#modelo${j}" rotation="${ubicaciones[X][i].c.mensajes[j].rotacion} " position="${ubicaciones[X][i].c.mensajes[j].posicion}"></a-gltf-model>`;
+								break;
+						case 4:
+							c = 
+								`<a-assets>
+									<img id="imagen${j}" src="${ubicaciones[X][i].c.mensajes[j].src}">
+								</a-assets>
+								<a-image src="#imagen${j}" width="${ubicaciones[X][i].c.mensajes[j].ancho}" height="${ubicaciones[X][i].c.mensajes[j].alto}" rotation="${ubicaciones[X][i].c.mensajes[j].rotacion}" position="${ubicaciones[X][i].c.mensajes[j].posicion}"></a-image>`
+					}
+					b = b+c;
 				}
 			}
 			document.getElementById("m4").innerHTML = `
 			<a-scene embedded>
+			
 				<a-sky src="img/${centros[X].a}/${ubicaciones[X][i].b}.jpeg" rotation="0 -360 0"></a-sky>
 				${b}
 			</a-scene>`;
 		},200);
 		
 	});
+}
+let marker = null;
+if(navigator.geolocation){
+	navigator.geolocation.watchPosition(
+		(position) => {
+			if(marker){
+				V.removeLayer(marker);
+			}
+			marker = L.marker([position.coords.latitude,position.coords.longitude], {
+				icon: L.icon({
+					iconUrl: "img/bx-cross.svg",
+					iconSize: [35,35],
+					iconAnchor: [17.5,17.5],
+				})
+			}).addTo(V).openPopup();
+		},
+		(error) => {
+			console.error(error);
+		},
+		{
+			enableHighAccuracy: true,
+			maximumAge: 0,
+			timeout: 10000
+		}
+	);
 }

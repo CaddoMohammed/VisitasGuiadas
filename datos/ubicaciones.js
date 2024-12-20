@@ -9,16 +9,40 @@ var ubicaciones = [[
 				mostrarMensaje:true,
 				mensajes:[
 					{
+						tipo:1,
 						texto:"Edificio A1: Facultad de Ciencias Sociales",
 						tamaño:15,
 						posicion:"6 1.25 -10",
-						rotacion:"0 10 0"
+						rotacion:"0 10 0",
+						fuente:"kelsonsans",
+						color:"#47DFFF"
 					},
-					{
+					{	
+						tipo:2,
 						texto:"Mensaje 2",
 						tamaño:6,
-						posicion:"6 1.25 -5",
-						rotacion:"0 20 0"
+						caja:{
+							color:"#0000FF",
+							color_texto:"#FFFFFF",
+							alineacion:"center"
+						},
+						posicion:"6 1.25 -15",
+						rotacion:"0 -20 0",
+						fuente:"dejavu"
+					},
+					{	
+						tipo:3,
+						src:"datos/modelos-3d/ejemplo.glb",
+						posicion:"120 0 -5",
+						rotacion:"0 -20 0",
+					},
+					{
+						tipo:4,
+						src:"datos/img/puma.png",
+						ancho:10,
+						alto:7,
+						posicion:"35 1.25 -3",
+						rotacion:"0 -30 0",
 					}
 
 				]
@@ -31,6 +55,7 @@ var ubicaciones = [[
 				mostrarMensaje:true,
 				mensajes:[
 					{
+						tipo:1,
 						texto:"Mensaje 1",
 						tamaño:6,
 						posicion:"-1.50 1.25 -5",
@@ -45,6 +70,7 @@ var ubicaciones = [[
 				mostrarMensaje:true,
 				mensajes:[
 					{
+						tipo:1,
 						texto:"Mensaje 1",
 						tamaño:6,
 						posicion:"-1.50,1.25,-5",
@@ -59,6 +85,7 @@ var ubicaciones = [[
 				mostrarMensaje:true,
 				mensajes:[
 					{
+						tipo:1,
 						texto:"Mensaje 1",
 						tamaño:6,
 						posicion:"-1.50 1.25 -5",
@@ -73,6 +100,7 @@ var ubicaciones = [[
 				mostrarMensaje:true,
 				mensajes:[
 					{
+						tipo:1,
 						texto:"Mensaje 1",
 						tamaño:6,
 						posicion:"-1.50 1.25 -5",
@@ -87,6 +115,7 @@ var ubicaciones = [[
 				mostrarMensaje:true,
 				mensajes:[
 					{
+						tipo:1,
 						texto:"Mensaje 1",
 						tamaño:6,
 						posicion:"-1.50 1.25 -5",
@@ -101,6 +130,7 @@ var ubicaciones = [[
 				mostrarMensaje:true,
 				mensajes:[
 					{
+						tipo:1,
 						texto:"Mensaje 1",
 						tamaño:6,
 						posicion:"-1.50 1.25 -5",
@@ -115,6 +145,7 @@ var ubicaciones = [[
 				mostrarMensaje:true,
 				mensajes:[
 					{
+						tipo:1,
 						texto:"Mensaje 1",
 						tamaño:6,
 						posicion:"-1.50 1.25 -5",
@@ -129,6 +160,7 @@ var ubicaciones = [[
 				mostrarMensaje:true,
 				mensajes:[
 					{
+						tipo:1,
 						texto:"Mensaje 1",
 						tamaño:6,
 						posicion:[-1.50,1.25,-5],
@@ -143,6 +175,7 @@ var ubicaciones = [[
 				mostrarMensaje:true,
 				mensajes:[
 					{
+						tipo:1,
 						texto:"Mensaje 1",
 						tamaño:6,
 						posicion:"-1.50 1.25 -5",
@@ -157,6 +190,7 @@ var ubicaciones = [[
 				mostrarMensaje:true,
 				mensajes:[
 					{
+						tipo:1,
 						texto:"Mensaje 1",
 						tamaño:6,
 						posicion:"-1.50 1.25 -5",
@@ -171,6 +205,7 @@ var ubicaciones = [[
 				mostrarMensaje:true,
 				mensajes:[
 					{
+						tipo:1,
 						texto:"Mensaje 1",
 						tamaño:6,
 						posicion:"-1.50 1.25 -5",
@@ -185,6 +220,7 @@ var ubicaciones = [[
 				mostrarMensaje:true,
 				mensajes:[
 					{
+						tipo:1,
 						texto:"Mensaje 1",
 						tamaño:6,
 						posicion:"-1.50 1.25 -5",
@@ -199,6 +235,7 @@ var ubicaciones = [[
 				mostrarMensaje:true,
 				mensajes:[
 					{
+						tipo:1,
 						texto:"Mensaje 1",
 						tamaño:6,
 						posicion:"-1.50 1.25 -5",
@@ -213,6 +250,7 @@ var ubicaciones = [[
 				mostrarMensaje:true,
 				mensajes:[
 					{
+						tipo:1,
 						texto:"Mensaje 1",
 						tamaño:6,
 						posicion:"-1.50 1.25 -5",
@@ -227,6 +265,7 @@ var ubicaciones = [[
 				mostrarMensaje:true,
 				mensajes:[
 					{
+						tipo:1,
 						texto:"Mensaje 1",
 						tamaño:6,
 						posicion:"-1.50 1.25 -5",
@@ -241,6 +280,7 @@ var ubicaciones = [[
 				mostrarMensaje:true,
 				mensajes:[
 					{
+						tipo:1,
 						texto:"Mensaje 1",
 						tamaño:6,
 						posicion:[-1.50,1.25,-5],
@@ -255,6 +295,7 @@ var ubicaciones = [[
 				mostrarMensaje:true,
 				mensajes:[
 					{
+						tipo:1,
 						texto:"Mensaje 1",
 						tamaño:6,
 						posicion:"-1.50 1.25 -5",
@@ -269,6 +310,7 @@ var ubicaciones = [[
 				mostrarMensaje:true,
 				mensajes:[
 					{
+						tipo:1,
 						texto:"Mensaje 1",
 						tamaño:6,
 						posicion:"-1.50 1.25 -5",
@@ -283,6 +325,7 @@ var ubicaciones = [[
 				mostrarMensaje:true,
 				mensajes:[
 					{
+						tipo:1,
 						texto:"Mensaje 1",
 						tamaño:6,
 						posicion:"-1.50 1.25 -5",
@@ -297,6 +340,7 @@ var ubicaciones = [[
 				mostrarMensaje:true,
 				mensajes:[
 					{
+						tipo:1,
 						texto:"Mensaje 1",
 						tamaño:6,
 						posicion:"-1.50 1.25 -5",
@@ -311,6 +355,7 @@ var ubicaciones = [[
 				mostrarMensaje:true,
 				mensajes:[
 					{
+						tipo:1,
 						texto:"Mensaje 1",
 						tamaño:6,
 						posicion:"-1.50 1.25 -5",
@@ -325,6 +370,7 @@ var ubicaciones = [[
 				mostrarMensaje:true,
 				mensajes:[
 					{
+						tipo:1,
 						texto:"Mensaje 1",
 						tamaño:6,
 						posicion:"-1.50 1.25 -5",
@@ -339,6 +385,7 @@ var ubicaciones = [[
 				mostrarMensaje:true,
 				mensajes:[
 					{
+						tipo:1,
 						texto:"Mensaje 1",
 						tamaño:6,
 						posicion:"-1.50 1.25 -5",
