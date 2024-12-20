@@ -33,3 +33,28 @@ for(let i=0;i<ubicaciones[X].length;i++){
 		
 	});
 }
+let marker = null;
+if(navigator.geolocation){
+	navigator.geolocation.watchPosition(
+		(position) => {
+			if(marker){
+				V.removeLayer(marker);
+			}
+			marker = L.marker([position.coords.latitude,position.coords.longitude], {
+				icon: L.icon({
+					iconUrl: "img/bx-cross.svg",
+					iconSize: [35,35],
+					iconAnchor: [17.5,17.5],
+				})
+			}).addTo(V).openPopup();
+		},
+		(error) => {
+			console.error(error);
+		},
+		{
+			enableHighAccuracy: true,
+			maximumAge: 0,
+			timeout: 10000
+		}
+	);
+}
