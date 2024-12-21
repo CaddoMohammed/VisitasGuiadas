@@ -50,7 +50,7 @@ var ubicaciones = [[
 		},
 		{
 			a:[14.08556, -87.16223],
-			b:"Edificio A2",
+			b:"Edificio A2: Facultad de Ciencias Jurídicas",
 			c:{
 				mostrarMensaje:true,
 				mensajes:[
