@@ -4,7 +4,7 @@ var centros = [
 var ubicaciones = [[
 		{
 			a:[14.08501, -87.16222],
-			b:"Edificio A1: Facultad de Ciencias Sociales",
+			b:"Edificio A1 - Facultad de Ciencias Sociales",
 			c:{
 				mostrarMensaje:true,
 				mensajes:[
@@ -65,7 +65,7 @@ var ubicaciones = [[
 		},
 		{
 			a:[14.0861, -87.16178],
-			b:"Edificio B1",
+			b:"Edificio B1 - Facultad de Ingeniería",
 			c:{
 				mostrarMensaje:true,
 				mensajes:[
@@ -80,7 +80,7 @@ var ubicaciones = [[
 		},
 		{
 			a:[14.08667, -87.16204],
-			b:"Edificio B2",
+			b:"Edificio B2 - Facultad de Ingeniería",
 			c:{
 				mostrarMensaje:true,
 				mensajes:[
@@ -97,7 +97,7 @@ var ubicaciones = [[
 		},
 		{
 			a:[14.08675, -87.16347],
-			b:"Edificio C1",
+			b:"Edificio C1 - Facultad de Ciencias Económicas",
 			c:{
 				mostrarMensaje:true,
 				mensajes:[
@@ -142,7 +142,7 @@ var ubicaciones = [[
 		},
 		{
 			a:[14.08647,-87.16543],
-			b:"Edificio C3",
+			b:"Edificio C3 - Facultad de Humanidades y Artes",
 			c:{
 				mostrarMensaje:true,
 				mensajes:[
@@ -172,7 +172,7 @@ var ubicaciones = [[
 		},
 		{
 			a:[14.08385,-87.16221 ],
-			b:"Edificio E1",
+			b:"Edificio E1 - Facultad de Ciencias",
 			c:{
 				mostrarMensaje:true,
 				mensajes:[
@@ -202,7 +202,7 @@ var ubicaciones = [[
 		},
 		{
 			a:[14.08364,-87.16594],
-			b:"Edificio G1",
+			b:"Edificio G1 - Facultad de Odontología",
 			c:{
 				mostrarMensaje:true,
 				mensajes:[
@@ -232,7 +232,7 @@ var ubicaciones = [[
 		},
 		{
 			a:[14.08409,-87.16747],
-			b:"Edificio I1",
+			b:"Edificio I1 - Facultad de Química y Farmacia",
 			c:{
 				mostrarMensaje:true,
 				mensajes:[
@@ -262,7 +262,7 @@ var ubicaciones = [[
 		},
 		{
 			a:[14.0877,-87.15948],
-			b:"Edificio K1",
+			b:"Edificio K1 - Facultad de Ciencias Espaciales",
 			c:{
 				mostrarMensaje:true,
 				mensajes:[
@@ -277,7 +277,7 @@ var ubicaciones = [[
 		},
 		{
 			a:[14.08782,-87.15993],
-			b:"Edificio K2",
+			b:"Edificio K2 - Facultad de Ciencias Espaciales",
 			c:{
 				mostrarMensaje:true,
 				mensajes:[
