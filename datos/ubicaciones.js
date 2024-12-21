@@ -4,7 +4,7 @@ var centros = [
 var ubicaciones = [[
 		{
 			a:[14.08501, -87.16222],
-			b:"Edificio A1",
+			b:"Edificio A1: Facultad de Ciencias Sociales",
 			c:{
 				mostrarMensaje:true,
 				mensajes:[
@@ -86,10 +86,12 @@ var ubicaciones = [[
 				mensajes:[
 					{
 						tipo:1,
-						texto:"Mensaje 1",
-						tamaño:6,
-						posicion:"-1.50 1.25 -5",
-						rotacion:"0 0 0"
+						texto:"Edificio A1: Facultad de Ciencias Sociales",
+						tamaño:15,
+						posicion:"0 0 -0",
+						rotacion:"0 0 0",
+						fuente:"kelsonsans",
+						color:"#4287f5"
 				}]
 			}
 		},
@@ -365,7 +367,7 @@ var ubicaciones = [[
 		},
 		{
 			a:[14.08376, -87.16273],
-			b:"VOAE",
+			b:"Registro DIPP",
 			c:{
 				mostrarMensaje:true,
 				mensajes:[
