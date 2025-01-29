@@ -21,9 +21,9 @@ if(navigator.geolocation){
                     }
                 }
             }
-            if(X!==`${Z[I].Nombre}/${Z[I].Ubicaciones[J].Nombre}`){
+            if(X!==`${Z[I].Nombre}/${Z[I].Ubicaciones[J].Nombre.replace(/\s+/g, "")}`){
                     document.getElementById("escaneo").innerHTML = `
-                    <a-scene mindar-image="imageTargetSrc:datos/${Z[I].Nombre}/${Z[I].Ubicaciones[J].Nombre}.mind" color-space="sRGB" renderer="colorManagement:true, physicallyCorrectLights" vr-mode-ui="enabled: false" device-orientation-permission-ui="enabled: false;">
+                    <a-scene mindar-image="imageTargetSrc:datos/${Z[I].Nombre.replace(/\s+/g,"")}/${Z[I].Ubicaciones[J].Nombre.replace(/\s+/g,"")}.mind" color-space="sRGB" renderer="colorManagement:true, physicallyCorrectLights" vr-mode-ui="enabled: false" device-orientation-permission-ui="enabled: false;">
                         <a-assets>
                         <a-asset-item id="bearModel" src="https://cdn.jsdelivr.net/gh/hiukim/mind-ar-js@1.2.5/examples/image-tracking/assets/band-example/bear/scene.gltf"></a-asset-item>
                         <a-asset-item id="raccoonModel" src="https://cdn.jsdelivr.net/gh/hiukim/mind-ar-js@1.2.5/examples/image-tracking/assets/band-example/raccoon/scene.gltf"></a-asset-item>
