@@ -21,7 +21,7 @@ if(navigator.geolocation){
                     }
                 }
             }
-            if(X!==`${Z[I].Nombre}/${Z[I].Ubicaciones[J].Nombre.replace(/\s+/g, "")}`){
+            if(X!==`${Z[I].Nombre.replace(/\s+/g,"")}/${Z[I].Ubicaciones[J].Nombre.replace(/\s+/g,"")}`){
                     document.getElementById("escaneo").innerHTML = `
                     <a-scene mindar-image="imageTargetSrc:datos/${Z[I].Nombre.replace(/\s+/g,"")}/${Z[I].Ubicaciones[J].Nombre.replace(/\s+/g,"")}.mind" color-space="sRGB" renderer="colorManagement:true, physicallyCorrectLights" vr-mode-ui="enabled: false" device-orientation-permission-ui="enabled: false;">
                         <a-assets>
@@ -38,15 +38,17 @@ if(navigator.geolocation){
                         <a-gltf-model rotation="0 0 0 " position="0 -0.25 0" scale="0.05 0.05 0.05" src="#bearModel" animation-mixer>
                         </a-entity>
                     </a-scene>`;
-                let a = document.getElementsByClassName("inner");
-                a[0].classList.add("d-flex","align-items-center","justify-content-center");
-                if(!document.getElementById("imagen")){
-                    let b = document.createElement("img");
-                    b.id = "imagen";
-                    b.style.width = "95%";
-                    b.src = `img/referencias/${Z[I].Nombre.replace(/\s+/g,"")}/${Z[I].Ubicaciones[J].Nombre.replace(/\s+/g,"")}.webp`;
-                    a[0].appendChild(b);
-                }
+                    setTimeout(() => {
+                        let a = document.getElementsByClassName("inner");
+                        a[0].classList.add("d-flex","align-items-center","justify-content-center");
+                        if(!document.getElementById("imagen")){
+                            let b = document.createElement("img");
+                            b.id = "imagen";
+                            b.style.width = "95%";
+                            b.src = `img/referencias/${Z[I].Nombre.replace(/\s+/g,"")}/${Z[I].Ubicaciones[J].Nombre.replace(/\s+/g,"")}.webp`;
+                            a[0].appendChild(b);
+                        }
+                    },100);
                 X = `${Z[I].Nombre.replace(/\s+/g,"")}/${Z[I].Ubicaciones[J].Nombre.replace(/\s+/g,"")}`;
             }
 		},
