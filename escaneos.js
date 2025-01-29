@@ -44,10 +44,10 @@ if(navigator.geolocation){
                     let b = document.createElement("img");
                     b.id = "imagen";
                     b.style.width = "95%";
-                    b.src = `img/referencias/${Z[I].Nombre}/${Z[I].Ubicaciones[J].Nombre}.webp`;
+                    b.src = `img/referencias/${Z[I].Nombre.replace(/\s+/g,"")}/${Z[I].Ubicaciones[J].Nombre.replace(/\s+/g,"")}.webp`;
                     a[0].appendChild(b);
                 }
-                X = `${Z[I].Nombre}/${Z[I].Ubicaciones[J].Nombre}`;
+                X = `${Z[I].Nombre.replace(/\s+/g,"")}/${Z[I].Ubicaciones[J].Nombre.replace(/\s+/g,"")}`;
             }
 		},
 		(x) => {
