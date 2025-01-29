@@ -49,24 +49,26 @@
 				</li>
 			</ul>
 		</header>
-		<main class="flex-grow-1 z-2" style="height:0;">
-			<section id="mapa" style="width:100%; height:100%;"></section>
+		<main class="flex-grow-1" style="height:0;">
+			<section id="mapa" style="width:100%; height:100%;" class="z-n1"></section>
 		</main>
 		<div>
-			<button id="escanear" type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#modal-escaneo" style="display:none;">
+			<button id="exploracion" type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#modal-exploracion" style="display:none;">
 				Escanear
 			</button>
-			<div class="modal fade" id="modal-escaneo" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="EscaneoStaticBackdropLabel" aria-hidden="true">
+			<div class="modal fade" id="modal-exploracion" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="3" aria-labelledby="ExploracionStaticBackdropLabel" aria-hidden="true">
 				<div class="modal-dialog modal-fullscreen">
 					<div class="modal-content">
 						<div class="modal-header">
-							<h1  class="modal-title" id="EscaneoStaticBackdropLabel"></h1>
+							<h1 class="modal-title fs-5" id="ExploracionStaticBackdropLabel"></h1>
 							<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
 						</div>
-						<div id="escaneo" class="modal-body" style="position:relative; width:100%; height:100%;">
-							
+						<div id="foto360" class="modal-body" style="position:relative; width:100%; height:100%;"></div>
+						<div class="modal-footer">
+							<button type="button" class="btn btn-primary" data-bs-dismiss="modal">
+								<a href="escaneo.html" style="color:var(--bs-light);font-weight:700;text-decoration:none;">Escanear</a>
+							</button>
 						</div>
-						<div class="modal-footer"></div>
 					</div>
 				</div>
 			</div>
