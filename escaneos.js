@@ -5,16 +5,17 @@ async function a1(){
 	try{
 		Z = await Y.rpc("DatosCentrosUniversitariosPresencial");
 		Z = Z.data;
-		console.log(Z)
 		let a = document.querySelector("a-scene");
-		console.log(a)
 		for(let i=0;i<Z.length;i++){
 			for(let j=0;j<Z[i].Ubicaciones.length;j++){
 				let b = document.createElement("a-text");
-				b.setAttribute('gps-entity-place',`latitude:${Z[i].Ubicaciones[j].Latitud};longitude:${Z[i].Ubicaciones[j].Longitud};`);
-				b.setAttribute('look-at',`[gps-camera]`);
-				b.setAttribute('scale',`${Z[i].Ubicaciones[j].EscalaA} ${Z[i].Ubicaciones[j].EscalaB} ${Z[i].Ubicaciones[j].EscalaC}`);
-				b.setAttribute('value',`${Z[i].Ubicaciones[j].Texto}`);
+				b.setAttribute("look-at","[gps-camera]");
+				b.setAttribute("gps-entity-place",`latitude:${Z[i].Ubicaciones[j].Latitud};longitude:${Z[i].Ubicaciones[j].Longitud};`);
+				b.setAttribute("scale",`${Z[i].Ubicaciones[j].EscalaA} ${Z[i].Ubicaciones[j].EscalaB} ${Z[i].Ubicaciones[j].EscalaC}`);
+				b.setAttribute("value",`${Z[i].Ubicaciones[j].Nombre}\n\n${Z[i].Ubicaciones[j].Texto}`);
+				b.setAttribute("font","fonts/custom-msdf.json");
+				b.setAttribute("font-image","fonts/custom.png");
+				b.setAttribute("negate",false);
 				a.appendChild(b);
 			}
 		}
@@ -23,4 +24,3 @@ async function a1(){
 		console.error(q);
 	}
 }
-document.body
