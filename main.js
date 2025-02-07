@@ -122,13 +122,21 @@ function b1(x){
 }
 async function c1(x,y){
 	try{
-		let a = await Y.storage.from("ubicaciones").getPublicUrl(`c${x}_u${y}.webp`);
 		document.getElementById("exploracion").click();
-		document.getElementById("foto360").innerHTML = `
-		<a-scene embedded>
-			<a-sky src="${a}"></a-sky>
-		</a-scene>`;
+		let a = await Y.storage.from("ubicaciones").getPublicUrl(`img/c${x}_u${y}.webp`);
+		setTimeout(()=> {
+			document.getElementById("foto360").innerHTML = 
+			`<a-scene embedded>
+				<a-assets>
+					<img id="c${x}-u${y}" src="${a.data.publicUrl}">
+				</a-assets>
+				<a-sky src="#c${x}-u${y}"></a-sky>
+			</a-scene>`
 
+		},150)
+		let b = new Date();
+		b = new Date(b.toLocaleString('en-US',{timeZone:"Etc/GMT+6"}));
+		b = await Y.from("AccesoPuntos").insert({CentroUniversitario:x,PuntoAcceso:y,Fecha:b.toISOString().split('T')[0],Hora:b.toTimeString().slice(0,8)});
 	}
 	catch(q){
 		console.error(q);
