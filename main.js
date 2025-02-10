@@ -10,7 +10,7 @@ if(navigator.geolocation){
 			if((X!==null)&&(V!==0)){
 				V.removeLayer(X);
 			}
-			if(W===null){
+			if((W===null)&&(Z!=undefined)){
 				let x = false;
 				for(let i=0;i<Z.length;i++){
 					let a = Math.PI*position.coords.latitude/180;
@@ -117,23 +117,24 @@ function b1(x){
 	}).addTo(V);
 	for(let i=0;i<x.Ubicaciones.length;i++){
 		let b = L.marker([x.Ubicaciones[i].Latitud,x.Ubicaciones[i].Longitud]).addTo(V);
-		b.on("click",() => c1(x.Id,x.Ubicaciones[i].Id));
+		b.on("click",() => c1(x.Id,x.Ubicaciones[i].Id,x.Ubicaciones[i].Datos));
 	}
 }
-async function c1(x,y){
+async function c1(x,y,z){
 	try{
+		let a = await Y.from("DatosPuntos").select('*').eq("Id",z);
+		a = a.data[0];
 		document.getElementById("exploracion").click();
-		let a = await Y.storage.from("ubicaciones").getPublicUrl(`img/c${x}_u${y}.webp`);
 		setTimeout(()=> {
 			document.getElementById("foto360").innerHTML = 
 			`<a-scene embedded>
 				<a-assets>
-					<img id="c${x}-u${y}" src="${a.data.publicUrl}">
+					<img id="${a.Imagen}" src="https://yrpewvflgexntamdzlia.supabase.co/storage/v1/object/public/ubicaciones/img/${a.Imagen}.webp">
 				</a-assets>
-				<a-sky src="#c${x}-u${y}"></a-sky>
+				<a-sky src="#${a.Imagen}"></a-sky>
 			</a-scene>`
 
-		},150)
+		},150);
 		let b = new Date();
 		b = new Date(b.toLocaleString('en-US',{timeZone:"Etc/GMT+6"}));
 		b = await Y.from("AccesoPuntos").insert({CentroUniversitario:x,PuntoAcceso:y,Fecha:b.toISOString().split('T')[0],Hora:b.toTimeString().slice(0,8)});
