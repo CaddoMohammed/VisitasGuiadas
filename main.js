@@ -131,9 +131,8 @@ async function c1(x,y,z){
 				<a-assets>
 					<img id="${a.Imagen}" src="https://yrpewvflgexntamdzlia.supabase.co/storage/v1/object/public/ubicaciones/img/${a.Imagen}.webp">
 				</a-assets>
-				<a-sky src="#${a.Imagen}"></a-sky>
-			</a-scene>`
-
+				<a-sky src="#${a.Imagen}" rotation="${a.RotacionA} ${a.RotacionB} ${a.RotacionC}"></a-sky>
+			</a-scene>`;
 		},150);
 		let b = new Date();
 		b = new Date(b.toLocaleString('en-US',{timeZone:"Etc/GMT+6"}));
