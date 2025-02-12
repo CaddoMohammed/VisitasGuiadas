@@ -137,6 +137,23 @@ async function c1(x,y,z){
 		let b = new Date();
 		b = new Date(b.toLocaleString('en-US',{timeZone:"Etc/GMT+6"}));
 		b = await Y.from("AccesoPuntos").insert({CentroUniversitario:x,PuntoAcceso:y,Fecha:b.toISOString().split('T')[0],Hora:b.toTimeString().slice(0,8)});
+		if(a.Mensajes==undefined){
+			return;
+		}
+		let c = document.querySelector("a-scene");
+		for(let i=0;i<a.Mensajes.length;i++){
+			switch(a.Mensajes[i].Tipo){
+				case 1:
+					let d = document.createElement("a-entity");
+					d.setAttribute("geometry","primitive:plane; height:0; width:0");
+					d.setAttribute("material",`color:${a.Mensajes[i].BackgroundColor}`);
+					d.setAttribute("text",`value:${a.Mensajes[i].Nombre}\n\n${a.Mensajes[i].Texto}; color:${a.Mensajes[i].TextColor}; font:chars/custom-msdf.json; font-image:chars/custom.png; negate:false`);
+					d.setAttribute("position",`${a.Mensajes[i].X} ${a.Mensajes[i].Y} ${a.Mensajes[i].Z}`);
+					d.setAttribute("rotation",`${a.Mensajes[i].RotacionA} ${a.Mensajes[i].RotacionB} ${a.Mensajes[i].RotacionC}`);
+					c.appendChild(d)
+					break;
+			}
+		}
 	}
 	catch(q){
 		console.error(q);
