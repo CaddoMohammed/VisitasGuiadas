@@ -142,7 +142,8 @@ async function c1(x,y,z){
 				"firstScene":z,
 				"autoLoad": true,
 				"friction":x.friction,
-				"sceneFadeDuration":x.sceneFadeDuration
+				"sceneFadeDuration":x.sceneFadeDuration,
+				"orientationOnByDefault":x.orientationOnByDefault
 			},
 			"scenes":U
 		});
