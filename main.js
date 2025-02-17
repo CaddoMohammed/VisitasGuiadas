@@ -1,3 +1,4 @@
+let U = new Object();
 let V = 0; // mapa
 let W = localStorage.getItem("CaddoMohammed-VisitasGuiadasUNAH-CentroUniversitario"); // Centro seleccionado
 let X = null; // marcador de posicion en el mapa
@@ -116,44 +117,55 @@ function b1(x){
 		attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
 	}).addTo(V);
 	for(let i=0;i<x.Ubicaciones.length;i++){
-		let b = L.marker([x.Ubicaciones[i].Latitud,x.Ubicaciones[i].Longitud]).addTo(V);
-		b.on("click",() => c1(x.Id,x.Ubicaciones[i].Id,x.Ubicaciones[i].Datos));
+		let a = L.marker([x.Ubicaciones[i].Latitud,x.Ubicaciones[i].Longitud]).addTo(V);
+		a.on("click",() => c1(x,x.Ubicaciones[i].Id,x.Ubicaciones[i].sceneId));
+	}
+	for(let i=0;i<x.Escenas.length;i++){
+		if(x.Escenas[i].Nombre==undefined){
+			continue;
+		}
+		U[x.Escenas[i].Nombre] = x.Escenas[i];
+		U[x.Escenas[i].Nombre]["panorama"] = `https://yrpewvflgexntamdzlia.supabase.co/storage/v1/object/public/ubicaciones/img/${x.Escenas[i]["Imagen"]}.webp`;
+		if(U[x.Escenas[i].Nombre]["title"]==undefined){
+			delete U[x.Escenas[i].Nombre]["title"];
+		}
+		delete U[x.Escenas[i].Nombre]["Imagen"];
+		delete U[x.Escenas[i].Nombre]["Nombre"];
 	}
 }
 async function c1(x,y,z){
+	document.getElementById("foto360").innerHTML = "";
+	document.getElementById("exploracion").click();
+	setTimeout(()=> {
+		pannellum.viewer("foto360", {
+			"default":{
+				"firstScene":z,
+				"autoLoad": true,
+				"friction":x.friction,
+				"sceneFadeDuration":x.sceneFadeDuration
+			},
+			"scenes":U
+		});
+	},150);
 	try{
-		let a = await Y.from("DatosPuntos").select('*').eq("Id",z);
-		a = a.data[0];
-		document.getElementById("exploracion").click();
-		setTimeout(()=> {
-			document.getElementById("foto360").innerHTML = 
-			`<a-scene embedded>
-				<a-assets>
-					<img id="${a.Imagen}" src="https://yrpewvflgexntamdzlia.supabase.co/storage/v1/object/public/ubicaciones/img/${a.Imagen}.webp">
-				</a-assets>
-				<a-sky src="#${a.Imagen}" rotation="${a.RotacionA} ${a.RotacionB} ${a.RotacionC}"></a-sky>
-			</a-scene>`;
-		},150);
-		let b = new Date();
-		b = new Date(b.toLocaleString('en-US',{timeZone:"Etc/GMT+6"}));
-		b = await Y.from("AccesoPuntos").insert({CentroUniversitario:x,PuntoAcceso:y,Fecha:b.toISOString().split('T')[0],Hora:b.toTimeString().slice(0,8)});
-		if(a.Mensajes==undefined){
-			return;
+		const a = new Intl.DateTimeFormat('es-HN', {
+			timeZone: 'America/Tegucigalpa',
+			year: 'numeric',
+			month: '2-digit',
+			day: '2-digit',
+			hour: '2-digit',
+			minute: '2-digit',
+			second: '2-digit',
+			hour12: false
+		});
+		let b = a.formatToParts(new Date());
+		b = {
+			CentroUniversitario:x.Id,
+			PuntoAcceso:y,
+			Fecha:`${b[4].value}-${b[2].value}-${b[0].value}`,
+			Hora:`${b[6].value}:${b[8].value}:${b[10].value}`
 		}
-		let c = document.querySelector("a-scene");
-		for(let i=0;i<a.Mensajes.length;i++){
-			switch(a.Mensajes[i].Tipo){
-				case 1:
-					let d = document.createElement("a-entity");
-					d.setAttribute("geometry","primitive:plane; height:0; width:0");
-					d.setAttribute("material",`color:${a.Mensajes[i].BackgroundColor}`);
-					d.setAttribute("text",`value:${a.Mensajes[i].Nombre}\n\n${a.Mensajes[i].Texto}; color:${a.Mensajes[i].TextColor}; font:chars/custom-msdf.json; font-image:chars/custom.png; negate:false`);
-					d.setAttribute("position",`${a.Mensajes[i].X} ${a.Mensajes[i].Y} ${a.Mensajes[i].Z}`);
-					d.setAttribute("rotation",`${a.Mensajes[i].RotacionA} ${a.Mensajes[i].RotacionB} ${a.Mensajes[i].RotacionC}`);
-					c.appendChild(d)
-					break;
-			}
-		}
+		await Y.from("AccesoPuntos").insert(b);
 	}
 	catch(q){
 		console.error(q);
