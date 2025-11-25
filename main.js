@@ -2,7 +2,7 @@ let U = new Object();
 let V = 0; // mapa
 let W = localStorage.getItem("CaddoMohammed-VisitasGuiadasUNAH-CentroUniversitario"); // Centro seleccionado
 let X = null; // marcador de posicion en el mapa
-const Y = supabase.createClient("https://yrpewvflgexntamdzlia.supabase.co","eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InlycGV3dmZsZ2V4bnRhbWR6bGlhIiwicm9sZSI6ImFub24iLCJpYXQiOjE3MzcxMDUzOTIsImV4cCI6MjA1MjY4MTM5Mn0.VxNcklQ9I8_18NPl3EPo6rJWfGrmqfoU4rKT9BwWzSo");
+const Y = supabase.createClient("https://pscthmfblitykjsfggnc.supabase.co","eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InBzY3RobWZibGl0eWtqc2ZnZ25jIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NjQwMjcyNjMsImV4cCI6MjA3OTYwMzI2M30.9w-6M31KdF804tVTpkcrKcrEy4h_BCnFY2cWHd9d8hI");
 let Z;
 a1();
 if(navigator.geolocation){
@@ -125,7 +125,7 @@ function b1(x){
 			continue;
 		}
 		U[x.Escenas[i].Nombre] = x.Escenas[i];
-		U[x.Escenas[i].Nombre]["panorama"] = `https://yrpewvflgexntamdzlia.supabase.co/storage/v1/object/public/ubicaciones/img/${x.Escenas[i]["Imagen"]}.webp`;
+		U[x.Escenas[i].Nombre]["panorama"] = `https://pscthmfblitykjsfggnc.supabase.co/storage/v1/object/public/ubicaciones/img/${x.Escenas[i]["Imagen"]}.webp`;
 		if(U[x.Escenas[i].Nombre]["title"]==undefined){
 			delete U[x.Escenas[i].Nombre]["title"];
 		}
